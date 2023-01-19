@@ -1,16 +1,18 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from "axios"
+import { state } from './state.js'
+import BodyMain from './components/BodyMain.vue'
 
 export default {
     components: {
-        HelloWorld,
+        BodyMain,
     }
 }
 </script>
 
 <template>
     <section class="vue-home">
-        <h1>A</h1>
+        <BodyMain />
     </section>
 </template>
 
