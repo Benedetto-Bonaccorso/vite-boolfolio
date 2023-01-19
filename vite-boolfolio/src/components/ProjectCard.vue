@@ -34,6 +34,7 @@ export default{
                     <div class="card text-center">
                         <h3 class="">Title: {{ entry.title }}</h3>
                         <h5>Author: {{ entry.author }}</h5>
+
                     </div>
                 </div>
             </div>
