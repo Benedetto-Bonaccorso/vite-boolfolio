@@ -4,7 +4,7 @@ import axios from "axios"
 import { state } from '../state.js';
 
 export default{
-        name: "ProjectCard",
+        name: "ProjectCards",
         data(){
             return{
                 state
@@ -31,15 +31,20 @@ export default{
 
             <div class="col-4 g-4" v-for="(entry,i) in state.entries">
                 <div class="card">
-                    <div class="card text-center">
+                    <div class="card d-flex align-items-center">
                         <h3 class="">Title: {{ entry.title }}</h3>
                         <h5>Author: {{ entry.author }}</h5>
-
+                        <div class="img-wrapper bg-dark w-50">
+                            <img :src="state.url + 'placeholders/download.jpg'" :alt="entry.title">
+                        </div>
+                        <a href="#">Link</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
 </template>
 
 <style lang="scss" scoped>
