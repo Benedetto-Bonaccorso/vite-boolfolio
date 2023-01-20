@@ -12,6 +12,7 @@ export default {
 <template>
 
     <h1>HomeView</h1>
-    <ProjectCards />
+
+    <router-link to="/projectCardsWrapper" tag="li">ProjectCards</router-link>
 
 </template>

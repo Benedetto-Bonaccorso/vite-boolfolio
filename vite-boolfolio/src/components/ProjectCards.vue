@@ -37,7 +37,9 @@ export default{
                         <div class="img-wrapper bg-dark w-50">
                             <img :src="state.url + 'placeholders/download.jpg'" :alt="entry.title">
                         </div>
-                        <a href="#">Link</a>
+                        <router-link :to="{ name: 'single-post', params: { slug: post.slug } }">Read more</router-link>
+                        <!--
+                        -->
                     </div>
                 </div>
             </div>

@@ -2,8 +2,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ProjectCards from "./components/ProjectCards.vue"
 import HomeView from "./views/HomeView.vue"
-import SinglePost from "./views/SinglePost.vue"
-import esempio from "./views/esempio.vue"
+import SingleProject from "./views/SingleProject.vue"
+import ProjectCardsWrapper from "./views/projectCardsWrapper.vue"
 
 // 2 define routes
 const router = createRouter({
@@ -16,14 +16,14 @@ const router = createRouter({
        },
        {
         path: '/projects/:slug',
-        name: 'single-post',
-        component: SinglePost
+        name: 'single-project',
+        component: SingleProject
       },
       {
-        path: '/esempio',
-        name: 'esempio',
-        component: esempio
-      },
+        path: '/projectCardsWrapper',
+        name: 'projectCardsWrapper',
+        component: ProjectCardsWrapper
+      }
   ]
 })
 

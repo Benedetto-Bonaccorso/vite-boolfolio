@@ -4,17 +4,19 @@ import axios from "axios"
 import { state } from '../state.js';
 
 export default{
-        name: "ProjectCards",
+        name: "SingleProject",
         data(){
             return{
                 state
             }
         },
         mounted() {
-                this.state.url = `http://127.0.0.1:8000/api/projects`
+            this.state.url = `http://127.0.0.1:8000/api/projects/` + this.$route.params.slug
+            
+            console.log(this.$route.params.slug)
 
-                axios.get(this.state.url)
-
+            axios.get(this.state.url)
+            
                 .then(response => {
                     this.state.entries = response.data.results.data
                     this.state.info = response.data.info
@@ -26,5 +28,5 @@ export default{
 </script>
 
 <template>
-    <h1>single post</h1>
+    <h1>{{ this.state.entries }}</h1>
 </template>

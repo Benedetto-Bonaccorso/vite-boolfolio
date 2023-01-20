@@ -12,10 +12,7 @@ export default {
 </script>
 
 <template>
-    <HomeView />
-    <router-link class="nav-link" :to="{name: 'esempio'}">esempio</router-link>
-    <a class="nav-link" :to="{ name: 'single-post' }" aria-current="page">Home</a>
-    <router-link to="/esempio" tag="li">esempio</router-link>
+    
     <router-view></router-view>
 </template>
 

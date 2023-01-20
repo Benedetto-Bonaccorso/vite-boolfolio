@@ -2,7 +2,7 @@
 import ProjectCards from "../components/ProjectCards.vue"
 
 export default {
-  name: 'esempio',
+  name: 'HomeView',
   components: {
         ProjectCards,
     }
@@ -11,7 +11,7 @@ export default {
 
 <template>
 
-    <h1>esempio</h1>
+    <h1>ProjectCards</h1>
     <ProjectCards />
 
 </template>
