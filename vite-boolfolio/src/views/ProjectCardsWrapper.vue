@@ -11,8 +11,10 @@ export default {
 
 <template>
 
-    <h1>ProjectCards</h1>
-    
-    <ProjectCards />
+    <div class="project-cards-wrapper">
+        <h1>ProjectCards</h1>
+
+        <ProjectCards />
+    </div>
 
 </template>

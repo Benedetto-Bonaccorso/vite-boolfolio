@@ -4,6 +4,7 @@ import {
   
   export const state = reactive({
     url: `http://127.0.0.1:8000/api/projects`,
+    baseUrl: `http://127.0.0.1:8000`,
     currentUrl: null,
     entries: null,
     info: null,
