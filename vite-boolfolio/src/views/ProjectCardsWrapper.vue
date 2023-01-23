@@ -16,9 +16,7 @@ export default {
     <AppNav />
     
 
-    <div class="project-cards-wrapper">
-        
-        <h1>ProjectCards</h1>
+    <div>
         <ProjectCards />
     </div>
 

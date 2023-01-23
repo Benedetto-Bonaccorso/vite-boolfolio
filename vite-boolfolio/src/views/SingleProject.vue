@@ -1,10 +1,13 @@
 <script>
-
+import AppNav from "../components/AppNav.vue"
 import axios from "axios"
 import { state } from '../state.js';
 
 export default{
         name: "SingleProject",
+        components: {
+            AppNav,
+        },
         data(){
             return{
                 state
@@ -35,6 +38,15 @@ export default{
 </script>
 
 <template>
-    <h1>Single Project</h1>
-    <h1>Title: {{ this.state.entries }}</h1>
+
+    <AppNav />
+
+    <div class="m-4" v-if="this.state.entries != null">
+    
+        <h5 class="me-4">Author: {{ this.state.entries.author }}</h5>
+        <h3 class="me-4">Title: {{ this.state.entries.title }}</h3>
+        <img :src="this.state.baseUrl + '/storage/' + this.state.entries.cover_image" alt="">
+        <h5 class="my-2 me-4">Deadline: {{ this.state.entries.deadline }}</h5>
+
+    </div>
 </template>
