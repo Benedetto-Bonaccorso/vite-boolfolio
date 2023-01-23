@@ -18,10 +18,17 @@ export default{
             axios.get(this.state.url)
             
                 .then(response => {
-                    this.state.entries = response.data.results
-                    this.state.info = response.data.info
-                    console.log(response.data.results)
-                    console.log(this.state.entries)
+
+                    if (response.data.success) {
+                        this.state.entries = response.data.results
+                        this.state.info = response.data.info
+                        console.log(response.data.results)
+                        console.log(this.state.entries)
+                    } else {
+                        this.$router.push({ path: '/viewMissingPage' })
+                    }
+
+
                 })
         }
     }
@@ -29,5 +36,5 @@ export default{
 
 <template>
     <h1>Single Project</h1>
-    <h1>Title: {{ this.state.entries.title }}</h1>
+    <h1>Title: {{ this.state.entries }}</h1>
 </template>

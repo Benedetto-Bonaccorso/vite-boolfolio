@@ -48,7 +48,6 @@ export default{
                     console.log(response.data.results)
                     this.state.info = response.data.info
                     this.state.maxPage = response.data.results.last_page
-                    //console.log(this.state.maxPage)
                 })   
             }
         },
@@ -67,12 +66,13 @@ export default{
 
             <div class="col-4 g-4" v-for="(entry,i) in state.entries">
                 <div class="card shadow">
-                    <div class="card d-flex align-items-center">
-                        <h3 class="">Title: {{ entry.title }}</h3>
+                    <div class="card d-flex align-items-center text-center px-4 py-4">
+                        <h3>Title: {{ entry.title }}</h3>
                         <h5>Author: {{ entry.author }}</h5>
                         <div class="img-wrapper bg-dark w-50">
                             <img :src="this.state.baseUrl + '/storage/' + entry.cover_image" :alt="entry.title">
                         </div>
+                        <router-link :to=" '/projects/' +  entry.slug " tag="li">Projects</router-link>  
                     </div>
                 </div>
             </div>

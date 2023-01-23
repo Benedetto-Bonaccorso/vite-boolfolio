@@ -1,18 +1,20 @@
 <script>
 import ProjectCards from "../components/ProjectCards.vue"
+import AppNav from "../components/AppNav.vue"
 
 export default {
   name: 'HomeView',
   components: {
         ProjectCards,
+        AppNav,
     }
 }
 </script>
 
 <template>
 
-    <h1>HomeView</h1>
+    <AppNav />
 
-    <router-link to="/projectCardsWrapper" tag="li">ProjectCards</router-link>
+    <h1>HomeView</h1>
 
 </template>
