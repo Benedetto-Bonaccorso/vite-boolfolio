@@ -12,6 +12,7 @@ export default {
 <template>
 
     <h1>ProjectCards</h1>
+    
     <ProjectCards />
 
 </template>

@@ -4,6 +4,7 @@ import ProjectCards from "./components/ProjectCards.vue"
 import HomeView from "./views/HomeView.vue"
 import SingleProject from "./views/SingleProject.vue"
 import ProjectCardsWrapper from "./views/projectCardsWrapper.vue"
+import ViewMissingPage from "./views/ViewMissingPage.vue"
 
 // 2 define routes
 const router = createRouter({
@@ -23,7 +24,12 @@ const router = createRouter({
         path: '/projectCardsWrapper',
         name: 'projectCardsWrapper',
         component: ProjectCardsWrapper
-      }
+      },
+      {
+        path: '/:pathMatch(.*)*',
+        name: 'viewMissingPage',
+        component: ViewMissingPage
+      },
   ]
 })
 

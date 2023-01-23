@@ -18,7 +18,7 @@ export default{
             axios.get(this.state.url)
             
                 .then(response => {
-                    this.state.entries = response.data.results.data
+                    this.state.entries = response.data.results
                     this.state.info = response.data.info
                     console.log(response.data.results)
                     console.log(this.state.entries)
@@ -28,5 +28,6 @@ export default{
 </script>
 
 <template>
-    <h1>{{ this.state.entries }}</h1>
+    <h1>Single Project</h1>
+    <h1>Title: {{ this.state.entries.title }}</h1>
 </template>

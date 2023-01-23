@@ -10,17 +10,45 @@ export default{
                 state
             }
         },
-        mounted() {
-                this.state.url = `http://127.0.0.1:8000/api/projects`
-
-                axios.get(this.state.url)
+        methods: {
+            counterUp(){
+                if(this.counter < this.state.maxPage){
+                this.counter++
+                } else {
+                    this.counter = 1
+                }
+                this.currentPage = "?page=" + this.counter
+                this.state.currentUrl = this.state.url + this.currentPage
+                console.log(this.state.maxPage)
+                this.ajaxCall()
+            },
+            counterDown(){
+                this.counter--
+                this.currentPage = "?page=" + this.counter
+                this.state.currentUrl = this.state.url + this.currentPage
+                this.ajaxCall()
+            },
+            skipToPage(pageNumber){
+                
+            },
+            ajaxCall(){
+                axios.get(this.state.currentUrl)
 
                 .then(response => {
                     this.state.entries = response.data.results.data
-                    this.state.info = response.data.info
                     console.log(response.data.results)
-                    console.log(this.state.entries)
-                })
+                    this.state.info = response.data.info
+                    this.state.maxPage = response.data.results.last_page
+                    //console.log(this.state.maxPage)
+                })   
+            }
+        },
+        mounted() {
+                console.log(this.state.url)
+                this.state.currentUrl = this.state.url
+                this.ajaxCall()
+                this.counter = 1
+                //
         }
     }
 </script>
@@ -37,14 +65,13 @@ export default{
                         <div class="img-wrapper bg-dark w-50">
                             <img :src="state.url + 'placeholders/download.jpg'" :alt="entry.title">
                         </div>
-                        <router-link :to="{ name: 'single-post', params: { slug: post.slug } }">Read more</router-link>
-                        <!--
-                        -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <p v-on:click="counterUp()">Prossima</p>
 
     
 </template>
