@@ -61,6 +61,26 @@ export default{
 </script>
 
 <template>
+    <div class="text-wrapper d-flex justify-content-center mt-2 mb-4">
+        <div class="page-navigation d-flex text-white">
+            <div class="back pageWrapper text-center">
+                <h3 class="bg-black bg-gradient p-1 m-2 px-3" v-if="this.counter != 1" v-on:click="counterDown()">Previous</h3>
+                <h3 class="bg-black bg-gradient p-1 m-2 px-3 text-muted" v-else v-on:click="counterDown()">Previous</h3>
+            </div>
+            <div class="specific-page d-flex">
+                <div v-for="(page,i) in this.state.maxPage">
+                    <div class="pageWrapper">
+                        <h3 class="bg-black bg-gradient p-1 m-2 px-3" v-on:click="skipToPage(i)">{{ i + 1 }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="forward pageWrapper">
+                <h3 class="bg-black bg-gradient p-1 m-2 px-3" v-if="this.counter != this.state.maxPage" v-on:click="counterUp()">Next</h3>
+                <h3 class="bg-black bg-gradient p-1 m-2 px-3 text-muted" v-else v-on:click="counterUp()">Next</h3>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
 
@@ -72,34 +92,12 @@ export default{
                         <div class="img-wrapper bg-dark w-50">
                             <img :src="this.state.baseUrl + '/storage/' + entry.cover_image" :alt="entry.title">
                         </div>
-                        <router-link :to=" '/projects/' +  entry.slug " tag="li">Projects</router-link>  
+                        <router-link class="text-white text-decoration-none bg-black py-2 px-3 my-4" :to=" '/projects/' +  entry.slug " tag="li">Projects</router-link>  
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="text-wrapper d-flex justify-content-center mt-2 mb-4">
-        <div class="page-navigation d-flex text-white">
-            <div class="back pageWrapper text-center">
-                <h3 class="bg-black bg-gradient p-1 m-2 px-3" v-if="this.counter != 1" v-on:click="counterDown()">Previous</h3>
-            </div>
-            <div class="specific-page d-flex">
-                <div v-for="(page,i) in this.state.maxPage">
-                    <div class="pageWrapper">
-                        <h3 class="bg-black bg-gradient p-1 m-2 px-3" v-on:click="skipToPage(i)">{{ i + 1 }}</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="forward pageWrapper">
-                <h3 class="bg-black bg-gradient p-1 m-2 px-3" v-if="this.counter != this.state.maxPage" v-on:click="counterUp()">Next</h3>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    
 
     
 </template>
