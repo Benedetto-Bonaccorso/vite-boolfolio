@@ -42,7 +42,6 @@ export default{
                 console.log(this.projectsPerPage)
                 this.ajaxCall()
             },
-            
 
             ajaxCall(){
                 axios.get(this.state.currentUrl)
@@ -93,12 +92,12 @@ export default{
 
             <div class="col-4 g-4" v-for="(entry,i) in state.entries">
                 <div class="card rounded-5 shadow d-flex align-items-center text-center px-4 py-4">
-                    <h3>Title: {{ entry.title }}</h3>
-                    <h5>Author: {{ entry.author }}</h5>
-                    <div class="img-wrapper bg-dark w-50">
+                    <h3>{{ entry.title }}</h3>
+                    <h5>{{ entry.author }}</h5>
+                    <div class="img-wrapper bg-white w-50">
                         <img :src="this.state.baseUrl + '/storage/' + entry.cover_image" :alt="entry.title">
                     </div>
-                    <router-link class="text-white text-decoration-none bg-black py-2 px-3 my-4" :to=" '/projects/' +  entry.slug " tag="li">Info</router-link>  
+                    <router-link class="rounded rounded-pill text-white text-decoration-none bg-black py-2 px-3 my-4" :to=" '/projects/' +  entry.slug " tag="li">Info</router-link>  
                 </div>
             </div>
         </div>

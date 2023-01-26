@@ -17,11 +17,12 @@ export default{
 </script>
 
 <template>
-    <nav class="bg-primary">
-        <ul class="d-flex p-3">
-            <router-link class="text-white text-decoration-none bg-black py-2 px-3 m-2" to="/" tag="li">Home</router-link>
+    <nav class="bg-black w-100">
+        <div class="d-flex align-items-center mx-3">
 
-            <router-link class="text-white text-decoration-none bg-black py-2 px-3 m-2" to="/projectCardsWrapper" tag="li">Projects</router-link>  
-        </ul>
+            <router-link class="nav-button text-decoration-none fs-5 py-2 px-3 m-2 my-4" to="/" tag="li">About Me</router-link>
+
+            <router-link class="nav-button text-decoration-none fs-5 py-2 px-3 m-2 my-4" to="/projectCardsWrapper" tag="li">Projects</router-link>  
+        </div>
     </nav>
 </template>

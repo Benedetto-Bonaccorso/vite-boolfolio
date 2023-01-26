@@ -10,4 +10,5 @@ import {
     info: null,
     error: null,
     maxPage: null,
+    technologies: ["HTML", "CSS", "JavaScript", "VueJs", "Vite", "PHP", "Laravel", "MySql"]
   })

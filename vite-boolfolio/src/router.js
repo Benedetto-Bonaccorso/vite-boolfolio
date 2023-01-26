@@ -1,10 +1,10 @@
 // 1 Import from vue-router createRouter and createWebHistory
 import { createRouter, createWebHistory } from 'vue-router'
-import ProjectCards from "./components/ProjectCards.vue"
 import HomeView from "./views/HomeView.vue"
 import SingleProject from "./views/SingleProject.vue"
 import ProjectCardsWrapper from "./views/projectCardsWrapper.vue"
 import ViewMissingPage from "./views/ViewMissingPage.vue"
+import ContactsView from "./views/ContactsView.vue"
 
 // 2 define routes
 const router = createRouter({
@@ -29,6 +29,11 @@ const router = createRouter({
         path: '/:pathMatch(.*)*',
         name: 'viewMissingPage',
         component: ViewMissingPage
+      },
+      {
+        path: '/contacts',
+        name: 'contactsView',
+        component: ContactsView
       },
   ]
 })
